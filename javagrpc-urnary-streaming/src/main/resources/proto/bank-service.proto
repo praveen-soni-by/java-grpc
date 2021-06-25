@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "model/account-model.proto";
+
+option java_multiple_files = true;
+option java_package = "com.syscho.grpc.stub";
+
+
+service  AccountService {
+  rpc getBalance(model.BalanceRequest) returns (model.AccountResponse);
+  //server streaming
+  rpc withDrawAmount(model.WithDrawRequest) returns (stream model.AccountResponse);
+  //client streaming
+  rpc deposit(stream model.DepositRequest) returns (model.AccountResponse);
+  //client server streaming
+  rpc transferAmount(stream model.TransferRequest) returns (stream model.AccountResponses);
+}

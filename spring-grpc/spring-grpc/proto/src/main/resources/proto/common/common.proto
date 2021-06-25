@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package common;
+
+option java_package = "com.syscho.grpc.auto.common";
+option java_multiple_files = true;
+
+enum Genre{
+  ACTION = 0;
+  COMEDY = 1;
+  HORROR = 2;
+  SC_FI = 3;
+}
+
+
+enum Gender{
+  UNKNOWN = 0;
+  MALE = 1;
+  FEMALE = 2;
+}

@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option java_package = "com.syscho.grpc.stub";
+
+//service
+
+
+service product {
+    rpc getProducts(Empty) returns (Products);
+    rpc getProductById(ProductId) returns (Product);
+    rpc deleteProductById(ProductId) returns (StringMsg);
+    rpc saveProduct(Product) returns (Product);
+}
+
+
+message Products {
+    repeated Product products = 1;
+}
+
+message Product {
+    int32 productId = 1;
+    string productName = 2;
+    ProductType productType =3;
+}
+
+enum ProductType {
+  UNKNOWN=0;
+  CLOTHING = 1;
+  ELECTRONIC = 2;
+  HOUSE_HOLD =3;
+}
+
+
+message ProductId {
+    int32 productId = 1;
+}
+
+message StringMsg {
+  string msg = 1;
+}
+
+
+message Empty {
+}

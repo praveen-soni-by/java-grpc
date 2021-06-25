@@ -1,0 +1,45 @@
+syntax = "proto3";
+package model;
+
+option java_multiple_files = true;
+option java_package = "com.syscho.grpc.stub";
+
+
+message  TransferRequest{
+  int32  from_account_number = 1;
+  int32  to_account_number = 2;
+  int32  amount = 3;
+}
+
+message  AccountResponses{
+  Status status =1;
+  repeated AccountResponse  accountResponses = 2;
+}
+
+enum Status{
+  FAILED=0;
+  SUCCESS=1;
+}
+
+message Empty{}
+
+message  BalanceRequest{
+  int32  account_number = 1;
+
+}
+
+message  WithDrawRequest{
+  int32  account_number = 1;
+  int32  amount = 2;
+}
+
+
+message  DepositRequest{
+  int32  account_number = 1;
+  int32  amount = 2;
+}
+
+message  AccountResponse{
+  int32  account_number = 1;
+  int32  amount = 2;
+}

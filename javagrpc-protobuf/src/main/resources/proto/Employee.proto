@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+import "common/address.proto";
+
+option java_package = "com.syscho.grpc.stub";
+
+
+message Employees {
+    repeated Employee employees = 1;
+}
+
+message EmployeeMap {
+    map<int32, Employee> employees = 1;
+}
+
+message Employee {
+    int32 id = 1;
+    int32 age = 2;
+    string name = 3;
+    Designation designation =4;
+    EmployeeType type =5;
+    common.Address address =6;
+}
+
+enum Designation {
+  UNKNOWN=0;
+  MANAGER =1;
+  DEVELOPER =2;
+  LEAD =3;
+  TESTER =4;
+ }
+
+
+enum EmployeeType {
+  PERMANENT=0;
+  CONTRACTOR = 1;
+}
+
+

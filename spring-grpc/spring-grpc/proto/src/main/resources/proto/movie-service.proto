@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "common/common.proto";
+
+option java_package = "com.syscho.grpc.auto.movie";
+option java_multiple_files = true;
+
+
+service MovieService{
+  rpc getRecommendedMovies(RecommendedMovieRequest) returns (MovieResponses);
+}
+
+
+message MovieResponses{
+  repeated Movie movie = 1;
+}
+message RecommendedMovieRequest{
+  common.Genre  genre = 1;
+}
+
+message Movie{
+  int32 id = 1;
+  string  title = 2;
+  int32  year = 3;
+  common.Genre  genre = 4;
+}
+
+

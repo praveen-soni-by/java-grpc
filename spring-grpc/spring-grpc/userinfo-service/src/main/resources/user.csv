@@ -1,0 +1,3 @@
+user_Id,email_Id,name,age,gender,genre
+ADMIN,Admin@test.com,Alfons,64,MALE,COMEDY
+USER,User@test,Johnsson,487,MALE,HORROR

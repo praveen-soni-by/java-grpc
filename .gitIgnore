@@ -1,0 +1,25 @@
+# Log file
+*.log
+
+# Compiled class file
+*.class
+
+
+# Package Files #
+*.jar
+*.war
+*.idea
+*.zip
+*.cmd
+*.classpath
+*.settings
+*.project
+*.meta
+*.Meta
+*.iml
+*.mvn
+mvnw
+stub
+target
+*.DS_Store
+bin

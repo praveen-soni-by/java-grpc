@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "common/address.proto";
+option java_package = "com.syscho.grpc.stub";
+
+
+message User {
+    int32 userId = 1;
+    string userName = 2;
+    string emailId = 3;
+    repeated common.Address address=4;
+}
+
+
