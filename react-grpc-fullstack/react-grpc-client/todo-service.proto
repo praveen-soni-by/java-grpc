@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_package = "com.syscho.grpc.todo.auto";
+option java_multiple_files = true;
+
+
+service TodoService{
+  rpc getTodos(EmptyRequest) returns (Todos);
+  rpc addTodo(Todo) returns (Todo);
+}
+
+message EmptyRequest{
+}
+
+message Todos{
+  repeated Todo todo = 1;
+}
+
+message Todo{
+  string textValue = 2;
+}
+
+
